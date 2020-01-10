@@ -25,6 +25,7 @@ var pessoa = {
     peso: 70,
     andando: false,
     caminhouQuantosMetros: 0
+
 }
 
 /*
@@ -167,20 +168,22 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function(){
+    var genero, tempo, caminhou;
+
     if (pessoa.sexo == "Masculino"){
-        var genero = 'o';
+        genero = 'o';
     } else {
-        var genero = 'a';
+        genero = 'a';
     }
     if (pessoa.idade == 1){
-        var tempo = 'ano';
+        tempo = 'ano';
     } else {
-        var tempo = 'anos';
+        tempo = 'anos';
     }
     if (pessoa.caminhouQuantosMetros == 1){
-        var caminhou = 'metro'
+        caminhou = 'metro'
     } else{
-        var caminhou = 'metros'
+        caminhou = 'metros'
     }
     return "Olá, eu sou " + genero + " " + pessoa.nome + " " + pessoa.sobrenome   + ", tenho " + pessoa.idade + " " + tempo + ", " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + caminhou + "!"
 }
