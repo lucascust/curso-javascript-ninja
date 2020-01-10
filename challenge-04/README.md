@@ -60,7 +60,7 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-carro.mudaCor = function(cor){carro.cor = cor;}
+carro.mudarCor = function(cor){carro.cor = cor;}
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
@@ -132,36 +132,36 @@ Qual a cor atual do carro?
 carro.cor; //'PRETO'
 
 // Mude a cor do carro para vermelho.
-carro.cor = 'VERMELHO';
+carro.mudarCor('VERMELHO');
 
 // E agora, qual a cor do carro?
-carro.cor; // 'VERMELHO'
+carro.obterCor(); // 'VERMELHO'
 
 // Mude a cor do carro para verde musgo.
-carro.cor = 'VERDE MUSGO'
+carro.mudarCor('VERDE MUSGO');
 
 // E agora, qual a cor do carro?
-carro.cor //'VERDE MUSGO'
+carro.obterCor(); //'VERDE MUSGO'
 
 // Qual a marca e modelo do carro?
-carro.obterMarcaModelo //'Esse carro é um FORD LANDAU'
+carro.obterMarcaModelo(); //'Esse carro é um FORD LANDAU'
 
 // Adicione 2 pessoas no carro.
-carro.addPessoas(2) //'Já temos 2 pessoas no Carro!'
+carro.addPessoas(2); //'Já temos 2 pessoas no Carro!'
 
 // Adicione mais 4 pessoas no carro.
-carro.addPessoas(4) //'Só cabem mais 3 pessoas!'
+carro.addPessoas(4); //'Só cabem mais 3 pessoas!'
 
 // Faça o carro encher.
-carro.addPessoas(3) //'Já temos 5 pessoas no Carro!'
+carro.addPessoas(3); //'Já temos 5 pessoas no Carro!'
 
 
 // Tire 4 pessoas do carro.
-carro.addPessoas(-4) //'Já temos 1 pessoa no Carro!''
+carro.addPessoas(-4); //'Já temos 1 pessoa no Carro!''
 
 
 // Adicione 10 pessoas no carro.
-carro.addPessoas(10) //'Só cabem mais 4 pessoas!'
+carro.addPessoas(10); //'Só cabem mais 4 pessoas!'
 
 // Quantas pessoas temos no carro?
 carro.quantidadePessoas; // 1
