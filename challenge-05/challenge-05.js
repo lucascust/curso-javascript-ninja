@@ -55,6 +55,10 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
+
+/* Primeira Versão
+    - Sem uso de notação de array em objeto para buscar propriedade no objeto com variável
+*/
 function book(nome){
     var obj = {
         DomCasmurro:{
@@ -83,6 +87,32 @@ function book(nome){
         return obj.GrandeSertao;
     }
 }
+/* Versão Aprimorada
+ - Uso de Ternário
+ - obj[var]
+ - unário "!" para ausência de parâmetro
+*/
+function bookClean(nome){
+    var obj = {
+        "Dom Casmurro":{
+            quantidadePaginas: '300',
+            autor: 'Machado de Assis',
+            editora: 'Companhia das Letras'
+        },
+        "Crime e Castigo":{
+            quantidadePaginas: '400',
+            autor: 'Dostoiévski',
+            editora: '34'
+        },
+        "Grande Sertao":{
+            quantidadePaginas: '500',
+            autor: 'Guimaraes Rosa',
+            editora: 'Nova Fronteira'
+        }
+    }
+    return !nome ? obj : obj[nome];
+}
+
 
 
 /*
