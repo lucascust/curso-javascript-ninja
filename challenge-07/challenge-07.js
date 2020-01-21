@@ -17,13 +17,14 @@ Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
 array2 = ['str2', {carro:'BMW'}, 123]
-array2 = addItem(array, array2);
+addItem(array2, array);
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
+
 console.log(`O segundo elemento do segundo array é ${array[5][1]}`);
 
 
