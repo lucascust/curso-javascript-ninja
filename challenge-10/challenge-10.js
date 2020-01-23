@@ -27,11 +27,11 @@
     propriedade, usando os valores passados por parâmetro.
     */
     operation = {
-        '+': function(x, y){return x + y},
-        '-': function(x, y){return x - y},
-        '*': function(x, y){return x * y},
-        '/': function(x, y){return x / y},
-        '%': function(x, y){return x % y},
+        '+': function(x, y){return x + y;},
+        '-': function(x, y){return x - y;},
+        '*': function(x, y){return x * y;},
+        '/': function(x, y){return x / y;},
+        '%': function(x, y){return x % y;},
     }
 
     /*
@@ -44,10 +44,18 @@
     Caso contrário, "false".
     - O desafio é fazer o retorno sem usar "if" ou "switch".
     */
+   
+    // Interessantíssima questão, usa-se o tipo da propriedade em "operation" para verificar a existencia do mesmo
+    // isso pois caso seja requisitado uma propriedade que não existe em um objeto, o retorno é "undefined"
     function isOperatorValid(operator){
-
+        return( typeof operation[operator] === 'function' );
+        //opção 2:  return operation[operator] !== undefined ;
+        
+        // Versão melhor possível: 
+        // undefined é falsy; function é truthy, logo:
+        // return Boolean(operation[operator])
+        // return !!operation[operator]
     }
-
     /*
     Agora vamos criar a calculadora.
     - Crie uma função chamada `calculator`, que receberá como parâmetro um
@@ -60,7 +68,19 @@
     operador passado para a função "calculator", e passando para esse método
     os dois parâmetros da função de retorno de "calculator".
     */
-    // ?
+    function calculator(op){
+        if( isOperatorValid(op) ){
+            return( 
+                function(x, y){
+                    if( x - y !== NaN ){
+                        return operation[op](x, y);
+                    }
+                    return false;
+                });
+            }
+        return false;
+    }
+    
 
     /*
     Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -69,7 +89,9 @@
     'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
     Essa função mostrará a mensagem da operação que criaremos mais abaixo.
     */
-    // ?
+    function showOperationMessage(op, num1, num2){
+        return 'A operação ' + num1 + ' ' + op + ' ' + num2 + ' = ';
+    }
 
     /*
     Crie uma função chamada "showErrorMessage" que recebe um parâmetro: o
@@ -77,7 +99,9 @@
     Essa função deverá retornar a frase:
     'Operação "[OPERATOR]" não permitida!'
     */
-    // ?
+    function showErrorMessage(op){
+        return 'Operação "' + op + '" não permitida!' 
+    }
 
     /*
     Nossa calculadora está pronta! Agora vamos testá-la:
@@ -85,7 +109,9 @@
     - Declare 3 variáveis: "number1" e "number2", iniciando com valor zero, e
     "operationSignal", sem valor por enquanto.
     */
-    // ?
+    var number1 = 0;
+    var number2 = 0;
+    var operationSignal;
 
     /*
     PASSO 2:
@@ -93,8 +119,8 @@
     variável chamada "sum", que receba a função "calculator", passando por
     parâmetro a variável que recebeu o sinal da operação.
     */
-    // ?
-
+    operationSignal = '+';
+    var sum = calculator(operationSignal);
     /*
     PASSO 3:
     "sum" agora é uma função, e, se o sinal correto não foi passado para a
@@ -107,18 +133,45 @@
     - O segundo, a função de soma, passando os dois operandos.
     - Se "sum" for "false", mostrar no console a mensagem de erro.
     */
-    // ?
-
+   if(sum !== false){
+       number1 = 3;
+       number2 = 17;
+       console.log( showOperationMessage(operationSignal, number1, number2) + sum(number1, number2));
+    } else {
+        console.log( showErrorMessage(operationSignal) );
+    }
+    
     /*
     Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
     divisão e resto. Crie variáveis com os nomes "subtraction",
     "multiplication", "division" e "mod".
     */
-    // ?
-
-    /*
-    Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
-    a mensagem de erro será mostrada no console.
-    */
-    // ?
+   operationSignal = '-'
+   var subtraction = calculator(operationSignal);
+   console.log( showOperationMessage(operationSignal, number1, number2) + subtraction(number1, number2));
+   
+   operationSignal = '*'
+   var multiplication = calculator(operationSignal);
+   console.log( showOperationMessage(operationSignal, number1, number2) + multiplication(number1, number2));
+   
+   operationSignal = '/'
+   var division = calculator(operationSignal);
+   console.log( showOperationMessage(operationSignal, number1, number2) + division(number1, number2));
+   
+   operationSignal = '%'
+   var mod = calculator(operationSignal);
+   console.log( showOperationMessage(operationSignal, number1, number2) + mod(number1, number2));
+   
+   /*
+   Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
+   a mensagem de erro será mostrada no console.
+   */
+    operationSignal = 'ç'
+    var mod = calculator(operationSignal);
+    if(mod !== false){
+        console.log( showOperationMessage(operationSignal, number1, number2) + mod(number1, number2));
+    } else {
+        console.log( showErrorMessage( operationSignal ));
+    }
+    
 })();
