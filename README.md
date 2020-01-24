@@ -24,7 +24,7 @@ var str = new String('Palavra')
     - Conversor:  var x = type()  <- Não cria objeto
 
 - typeof:
-  - para qualquer estrutra não primitiva, typeof = object (INCLUINDO NULL - erro de implementação)
+  - para qualquer estrutra não primitiva, `typeof = object` (INCLUINDO NULL - erro de implementação)
   - logo, usar apenas para primitivos 
 
  INFO INTERESSANTE DA AULA:
