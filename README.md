@@ -29,6 +29,7 @@ var str = new String('Palavra')
 
  **INFO INTERESSANTE DA AULA:**
   - Busca se existe o parâmetro no objeto: 
+  
   ```javascript
   !!objeto[parametro] //retorna booleano
   ```
