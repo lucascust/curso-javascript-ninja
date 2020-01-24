@@ -70,13 +70,12 @@
     */
     function calculator(op){
         if( isOperatorValid(op) ){
-            return( 
-                function(x, y){
+            return function(x, y){
                     if( x - y !== NaN ){
                         return operation[op](x, y);
                     }
                     return false;
-                });
+                };
             }
         return false;
     }
