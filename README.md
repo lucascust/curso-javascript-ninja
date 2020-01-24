@@ -3,7 +3,7 @@
 - Fonções: Eleva funções ao topo do escopo 
 - Variáveis declaradas sempre são criadas no início do código como undefined
 - Variáveis não declaradas dão erro ao invocá-las
-# IIFE :
+### IIFE :
 - Funções auto executáveis, úteis para limitar o escopo
 
 ## Aula 10 - Wrapper Objects, typeof
