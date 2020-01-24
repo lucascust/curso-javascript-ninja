@@ -27,7 +27,7 @@ var str = new String('Palavra')
   - para qualquer estrutra não primitiva, `typeof = object` (INCLUINDO NULL - erro de implementação)
   - logo, usar apenas para primitivos 
 
- INFO INTERESSANTE DA AULA:
+ **INFO INTERESSANTE DA AULA:**
   - Busca se existe o parâmetro no objeto: 
   ```javascript
   !!objeto[parametro] //retorna booleano
