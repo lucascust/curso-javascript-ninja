@@ -1,3 +1,5 @@
+## Aula 5 - Arrays e Objetos  
+
 ## Aula 9 - Hoisting e IIFE (Immediately invoked function expression) 
 ### Hoisting: 
 - Fonções: Eleva funções ao topo do escopo 
